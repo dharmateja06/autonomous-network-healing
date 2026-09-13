@@ -1,0 +1,8 @@
+<nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+  <groups>
+    <group>
+      <name>netconf</name>
+      <user-name>netconf</user-name>
+    </group>
+  </groups>
+</nacm>

@@ -1,0 +1,32 @@
+name: anh
+
+topology:
+  nodes:
+    r1:
+      kind: linux
+      image: anh-router:1.0
+      binds:
+        - ../router-config/r1.sh:/r1.sh
+      exec:
+        - bash /r1.sh
+
+    r2:
+      kind: linux
+      image: anh-router:1.0
+      binds:
+        - ../router-config/r2.sh:/r2.sh
+      exec:
+        - bash /r2.sh
+
+    r3:
+      kind: linux
+      image: anh-router:1.0
+      binds:
+        - ../router-config/r3.sh:/r3.sh
+      exec:
+        - bash /r3.sh
+
+  links:
+    - endpoints: ["r1:eth1", "r2:eth1"]
+    - endpoints: ["r2:eth2", "r3:eth1"]
+    - endpoints: ["r1:eth2", "r3:eth2"]

@@ -1,0 +1,17 @@
+services:
+  redpanda:
+    image: docker.redpanda.com/redpandadata/redpanda:v25.2.2
+    container_name: anh-redpanda
+    command:
+      - redpanda
+      - start
+      - --overprovisioned
+      - --smp=1
+      - --memory=1G
+      - --reserve-memory=0M
+      - --check=false
+      - --node-id=0
+      - --kafka-addr=internal://0.0.0.0:9092,external://0.0.0.0:19092
+      - --advertise-kafka-addr=internal://anh-redpanda:9092,external://localhost:19092
+    ports:
+      - "19092:19092"

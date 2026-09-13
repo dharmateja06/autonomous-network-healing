@@ -1,0 +1,13 @@
+<nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+  <rule-list>
+    <name>netconf-user-rules</name>
+    <group>netconf</group>
+
+    <rule>
+      <name>allow-anh-router</name>
+      <module-name>anh-router</module-name>
+      <access-operations>create read update delete</access-operations>
+      <action>permit</action>
+    </rule>
+  </rule-list>
+</nacm>

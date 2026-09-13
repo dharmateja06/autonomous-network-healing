@@ -1,0 +1,40 @@
+module anh-router {
+  namespace "urn:anh:router";
+  prefix "anh";
+
+  organization
+    "Autonomous Network Healing Project";
+
+  description
+    "YANG model for autonomous network interface healing.";
+
+  revision 2026-09-13 {
+    description
+      "Initial version.";
+  }
+
+  container interfaces {
+    list interface {
+      key "name";
+
+      leaf name {
+        type string;
+        description
+          "Linux interface name.";
+      }
+
+      leaf enabled {
+        type boolean;
+        default true;
+        description
+          "Whether the interface should be operationally enabled.";
+      }
+
+      leaf description {
+        type string;
+        description
+          "Human-readable interface description.";
+      }
+    }
+  }
+}

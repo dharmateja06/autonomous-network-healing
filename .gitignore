@@ -1,0 +1,24 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment / secrets
+.env
+*.env
+
+# Containerlab generated files
+topology/clab-anh/
+
+# Logs
+logs/*.log
+
+# NETCONF / TLS private keys
+*.key
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
+
